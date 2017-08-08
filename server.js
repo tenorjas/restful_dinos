@@ -95,7 +95,10 @@ app.put("/api/dinosaurs/:id", (request, response) => {
   const myDino = allDinos.find(dino => {
     return dino.id === dinoId;
   });
-  myDino.weight = "70 tons";
+  myDino.name = request.body.name;
+  myDino.color = request.body.color;
+  myDino.weight = request.body.weight;
+  myDino.habitats = request.body.habitats;
   // send it back to the database
   response.json(myDino);
 });
