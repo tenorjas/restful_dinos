@@ -58,8 +58,33 @@ app.get("/api/dinosaurs/:id", (request, response) => {
   const myDino = allDinos.find(dino => {
     return dino.id === dinoId;
   });
-  // this is how we retrun JSON from an endpoint
+  // this is how we return JSON from an endpoint
   response.json(myDino);
+});
+
+app.get("/api/dinosaurs/:id/habitats", (request, response) => {
+  const dinoId = parseInt(request.params.id);
+  // go to my database
+  const myDino = allDinos.find(dino => {
+    return dino.id === dinoId;
+  });
+  // this is how we return JSON from an endpoint
+  response.json(myDino.habitats);
+});
+
+// Add a new dinosaurs
+app.post("/api/dinosaurs", (request, response) => {
+  let newDino = {
+    id: allDinos.length + 1, // note: the new id will be handled by the database
+    name: request.body.name,
+    color: request.body.color,
+    weight: request.body.weight,
+    habitats: request.body.habitats
+  };
+  // add to our "database"
+  allDinos.push(newDino);
+  // return something
+  response.json(newDino);
 });
 
 // listen on port 3000
