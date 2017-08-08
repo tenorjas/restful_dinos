@@ -87,6 +87,29 @@ app.post("/api/dinosaurs", (request, response) => {
   response.json(newDino);
 });
 
+// Update a dinosaur
+app.put("/api/dinosaurs/:id", (request, response) => {
+  // get the id from the request
+  const dinoId = parseInt(request.params.id);
+  // change its values
+  const myDino = allDinos.find(dino => {
+    return dino.id === dinoId;
+  });
+  myDino.weight = "70 tons";
+  // send it back to the database
+  response.json(myDino);
+});
+
+// Delete a dinosaur
+app.delete("/api/dinosaurs/:id", (request, response) => {
+  // get the id from the request
+  const dinoId = parseInt(request.params.id);
+  // delete the dinosaur from the "database"
+  allDinos = allDinos.filter(dino => dino.id !== dinoId);
+  // return all dinosaurs
+  response.json(allDinos);
+});
+
 // listen on port 3000
 app.listen(3000, function() {
   console.log("Successfully accessed RESTful Dinos on port 3000!");
