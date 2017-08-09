@@ -67,6 +67,14 @@ app.get("/", (request, response) => {
   response.render("dinos", { allDinos: allDinos });
 });
 
+app.get("/details/:id", (request, response) => {
+  let dinoId = parseInt(request.params.id);
+  let dino = allDinos.find(function(dinosaur) {
+    return dinosaur.id === dinoId;
+  });
+  response.render("details", { name: dino.name, photo: dino.photo, weight: dino.weight, habitats: dino.habitats });
+});
+
 // Creating an endpoint for my API
 // this endpoint is where the back end
 // meets the front end

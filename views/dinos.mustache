@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>Dinosaurs</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="/main.css">
   </head>
   <body>
     <h1>Dinosaurs</h1>
     <div class="wrapper">
       {{#allDinos}}
       <div class="dino">
-        <a href="#">{{name}}</a>
+        <a href="/details/{{id}}">{{name}}</a>
         <img src={{photo}} alt="photo">
       </div>
       {{/allDinos}}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dinosaur Details</title>
+    <link rel="stylesheet" href="/details.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>{{name}}</h1>
+      <img src={{photo}} alt="photo">
+      <span>Weight: {{weight}}</span>
+      <dl>
+        <dt>Habitats:</dt>
+        {{#habitats}}
+        <dd>{{.}}</dd>
+        {{/habitats}}
+      </dl>
+
+    </div>
+  </body>
+</html>
