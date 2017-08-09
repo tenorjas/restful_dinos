@@ -1,9 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const mustacheExpress = require("mustache-express");
 
 const app = express();
 
 app.use(express.static("public"));
+
+app.engine("mustache", mustacheExpress());
+app.set("views", "./views");
+app.set("view engine", "mustache");
 
 // this will attach the bodyParser to the pipeline and attach
 // the data to the req as JSON
@@ -16,6 +21,8 @@ let allDinos = [
   {
     id: 1,
     name: "Tyrannosaurus rex",
+    photo:
+      "https://thumb1.shutterstock.com/display_pic_with_logo/3076664/509463667/stock-photo-tyrannosaurus-rex-isolated-in-white-509463667.jpg",
     color: "grey",
     weight: "8 tons",
     habitats: ["plain", "forest"]
@@ -23,6 +30,7 @@ let allDinos = [
   {
     id: 2,
     name: "Velociraptor",
+    photo: "https://goo.gl/images/gnlMy6",
     color: "brown",
     weight: "250 lbs",
     habitats: ["jungle", "forest"]
@@ -30,6 +38,7 @@ let allDinos = [
   {
     id: 3,
     name: "Brachiosaurus",
+    photo: "https://goo.gl/images/EOZWWK",
     color: "brown",
     weight: "80 tons",
     habitats: ["plain", "forest"]
@@ -37,11 +46,25 @@ let allDinos = [
   {
     id: 4,
     name: "Triceratops",
+    photo: "https://goo.gl/images/rf7Rch",
     color: "brown",
     weight: "15 tons",
     habitats: ["plain", "forest"]
+  },
+  {
+    id: 5,
+    name: "Brontosaurus",
+    photo: "https://goo.gl/images/AGTTLv",
+    color: "grey",
+    weight: "60 tons",
+    habitats: ["plain", "forest"]
   }
 ];
+
+// Define a home page that displays all the dinosaurs' names and photos
+app.get("/", (request, response) => {
+  response.render("dinos");
+});
 
 // Creating an endpoint for my API
 // this endpoint is where the back end
