@@ -8,26 +8,12 @@
   <body>
     <h1>Dinosaurs</h1>
     <div class="wrapper">
+      {{#allDinos}}
       <div class="dino">
-        <a href="#">Tyrannosaurus rex</a>
-        <img src="https://thumb1.shutterstock.com/display_pic_with_logo/3076664/509463667/stock-photo-tyrannosaurus-rex-isolated-in-white-509463667.jpg" alt="photo">
+        <a href="#">{{name}}</a>
+        <img src={{photo}} alt="photo">
       </div>
-      <div class="dino">
-        <a href="#">Tyrannosaurus rex</a>
-        <img src="https://thumb1.shutterstock.com/display_pic_with_logo/3076664/509463667/stock-photo-tyrannosaurus-rex-isolated-in-white-509463667.jpg" alt="photo">
-      </div>
-      <div class="dino">
-        <a href="#">Tyrannosaurus rex</a>
-        <img src="https://thumb1.shutterstock.com/display_pic_with_logo/3076664/509463667/stock-photo-tyrannosaurus-rex-isolated-in-white-509463667.jpg" alt="photo">
-      </div>
-      <div class="dino">
-        <a href="#">Tyrannosaurus rex</a>
-        <img src="https://thumb1.shutterstock.com/display_pic_with_logo/3076664/509463667/stock-photo-tyrannosaurus-rex-isolated-in-white-509463667.jpg" alt="photo">
-      </div>
-      <div class="dino">
-        <a href="#">Tyrannosaurus rex</a>
-        <img src="https://thumb1.shutterstock.com/display_pic_with_logo/3076664/509463667/stock-photo-tyrannosaurus-rex-isolated-in-white-509463667.jpg" alt="photo">
-      </div>
+      {{/allDinos}}
 
       <!-- end of wrapper div -->
     </div>

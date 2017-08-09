@@ -30,7 +30,7 @@ let allDinos = [
   {
     id: 2,
     name: "Velociraptor",
-    photo: "https://goo.gl/images/gnlMy6",
+    photo: "http://images.dinosaurpictures.org/velociraptor_12_c4fd.jpg",
     color: "brown",
     weight: "250 lbs",
     habitats: ["jungle", "forest"]
@@ -38,7 +38,7 @@ let allDinos = [
   {
     id: 3,
     name: "Brachiosaurus",
-    photo: "https://goo.gl/images/EOZWWK",
+    photo: "http://images.dinosaurpictures.org/papo_brachiosaurus_2012_cf3f.jpg",
     color: "brown",
     weight: "80 tons",
     habitats: ["plain", "forest"]
@@ -46,7 +46,7 @@ let allDinos = [
   {
     id: 4,
     name: "Triceratops",
-    photo: "https://goo.gl/images/rf7Rch",
+    photo: "http://images.dinosaurpictures.org/triceratops-roger-hall-and-photo-researchers_1b1e.jpg",
     color: "brown",
     weight: "15 tons",
     habitats: ["plain", "forest"]
@@ -54,7 +54,8 @@ let allDinos = [
   {
     id: 5,
     name: "Brontosaurus",
-    photo: "https://goo.gl/images/AGTTLv",
+    photo:
+      "https://1.bp.blogspot.com/-EK34dcMTRjs/VvWmiymB8wI/AAAAAAAAAc0/9jFuTxWXt4gZtkWM79N6rXAhQFN2wSyEg/s1600/brontosaurus.jpg",
     color: "grey",
     weight: "60 tons",
     habitats: ["plain", "forest"]
@@ -63,7 +64,7 @@ let allDinos = [
 
 // Define a home page that displays all the dinosaurs' names and photos
 app.get("/", (request, response) => {
-  response.render("dinos");
+  response.render("dinos", { allDinos: allDinos });
 });
 
 // Creating an endpoint for my API
