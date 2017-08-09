@@ -8,11 +8,22 @@ body {
   flex-wrap: wrap;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h1 {
   font-family: sans-serif;
   font-size: 24pt;
   text-transform: uppercase;
-  text-align: center;
+  margin-bottom: 12pt;
+}
+
+#add {
+  font-family: sans-serif;
+  font-size: 24pt;
   margin-bottom: 12pt;
 }
 
