@@ -16,7 +16,19 @@
         <dd>{{.}}</dd>
         {{/habitats}}
       </dl>
-
+      <form class="edit" action="/api/dinosaurs/:id" method="put">
+        <p>To edit this dinosaur, enter new info here:</p>
+        <input type="text" name="name" value="" placeholder="Name">
+        <input type="text" name="photo" value="" placeholder="Enter photo URL here">
+        <input type="text" name="color" value="" placeholder="Color">
+        <input type="text" name="weight" value="" placeholder="Weight">
+        <input type="text" name="habitats" value="" placeholder="Habitat,habitat,habitat">
+        <button type="submit" name="button">Edit this dinosaur</button>
+      </form>
+      <form class="delete" action="/api/dinosaurs/:id" method="delete">
+        <p>To delete this dinosaur, press the delete button:</p>
+        <button type="submit" name="delete">Delete this dinosaur</button>
+      </form>
     </div>
   </body>
 </html>

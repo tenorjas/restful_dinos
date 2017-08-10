@@ -13,3 +13,26 @@ body {
 .wrapper img {
   width: 400px;
 }
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit button {
+  font-size: 12pt;
+}
+
+.delete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete button {
+  text-transform: uppercase;
+  font-size: 18pt;
+  color: red;
+  font-weight: bold;
+}
