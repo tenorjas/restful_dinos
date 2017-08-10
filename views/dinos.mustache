@@ -8,7 +8,6 @@
   <body>
     <header>
       <h1>Dinosaurs</h1>
-      <a id="add" href="/add_dino">Add a dinosaur</a>      
     </header>
     <div class="wrapper">
       {{#allDinos}}
@@ -20,5 +19,14 @@
 
       <!-- end of wrapper div -->
     </div>
+    <form class="add" action="/api/dinosaurs" method="post">
+      <h3>Add a Dinosaur</h3>
+      <input type="text" name="name" value="" placeholder="Name">
+      <input type="text" name="photo" value="" placeholder="Enter photo URL here">
+      <input type="text" name="color" value="" placeholder="Color">
+      <input type="text" name="weight" value="" placeholder="Weight">
+      <input type="text" name="habitats" value="" placeholder="Habitat,habitat,habitat">
+      <button type="submit" name="button">Add a Dinosaur</button>
+    </form>
   </body>
 </html>

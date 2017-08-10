@@ -104,19 +104,20 @@ app.get("/api/dinosaurs/:id/habitats", (request, response) => {
   response.json(myDino.habitats);
 });
 
-// Add a new dinosaurs
+// Add a new dinosaur through the website
 app.post("/api/dinosaurs", (request, response) => {
   let newDino = {
     id: allDinos.length + 1, // note: the new id will be handled by the database
     name: request.body.name,
+    photo: request.body.photo,
     color: request.body.color,
     weight: request.body.weight,
-    habitats: request.body.habitats
+    habitats: request.body.habitats.split(",")
   };
   // add to our "database"
   allDinos.push(newDino);
-  // return something
-  response.json(newDino);
+  // redirect to the home page
+  response.redirect("/");
 });
 
 // Update a dinosaur
